@@ -1,0 +1,31 @@
+{
+  "name": "ticket-system-infra",
+  "version": "0.1.0",
+  "bin": {
+    "ticket-system-infra": "bin/ticket-system-infra.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/jest": "^30",
+    "@types/node": "^24.10.1",
+    "aws-cdk": "2.1105.0",
+    "esbuild": "^0.27.3",
+    "jest": "^30",
+    "ts-jest": "^29",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.114.1-alpha.0",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.114.1-alpha.0",
+    "@aws-sdk/client-eventbridge": "^3.985.0",
+    "@types/aws-lambda": "^8.10.160",
+    "aws-cdk-lib": "^2.237.1",
+    "constructs": "^10.4.5"
+  }
+}
