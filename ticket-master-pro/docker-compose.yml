@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # מסד נתונים רלציוני - כאן נשמור משתמשים, אירועים והזמנות
+  postgres:
+    image: postgres:15
+    container_name: tm-postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: ticket_master
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Redis - לניהול נעילות (Locking) של כיסאות בזמן אמת ו-Cache
+  redis:
+    image: redis:alpine
+    container_name: tm-redis
+    ports:
+      - '6379:6379'
+
+  # RabbitMQ - ה-Message Broker שמאפשר לשירותים לדבר אסינכרונית
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: tm-rabbitmq
+    ports:
+      - '5672:5672'   # פורט לתקשורת קוד
+      - '15672:15672' # ממשק ניהול (Dashboard) בכתובת localhost:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+volumes:
+  postgres_data:

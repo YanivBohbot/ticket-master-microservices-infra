@@ -1,0 +1,25 @@
+{
+  "name": "ai-agent-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.986.0",
+    "@aws-sdk/client-dynamodb": "^3.986.0",
+    "@aws-sdk/client-ses": "^3.986.0",
+    "@nestjs/common": "^11.1.13",
+    "@nestjs/core": "^11.1.13",
+    "@types/aws-lambda": "^8.10.160",
+    "aws-lambda": "^1.0.7",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.2"
+  }
+}
