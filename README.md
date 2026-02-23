@@ -82,3 +82,6 @@ User → Booking API → DynamoDB → EventBridge → SQS → [AI Agent | Paymen
 ---
 
 For more details, see `.github/copilot-instructions.md` for AI agent and contributor guidelines.
+
+---
+PR prep: small commit to enable PR creation (2026-02-23)
